@@ -1,0 +1,66 @@
+{% block emz_top_bar %}
+	{% set searchBar = theme_config('emz-page-header-search') %}
+
+	<div class="emz-top-bar">
+		<div class="container">
+			<nav class="emz-top-bar-nav">
+				{% block emz_top_top_bar_number %}
+					<div class="emz-top-bar-item emz-top-bar-number">
+						<span class="emz-top-bar-text">{{ "emz.topnav.info"|trans|sw_sanitize}}</span>
+					</div>
+				{% endblock %}
+
+				{% if not searchBar %} 
+					{% block emz_top_bar_search %}
+						<div class="emz-top-bar-desktop emz-right">
+							<div class="emz-top-bar-item">
+								<div class="search-toggle">
+									<div class="emz-top-bar-hover emz-btn search-toggle-btn js-search-toggle-btn collapsed" 
+										type="button" 
+										data-bs-toggle="collapse" 
+										data-bs-target="#searchCollapse" 
+										aria-expanded="false" 
+										aria-controls="searchCollapse">
+										<span>{% sw_icon 'search' %}
+											{{ "header.searchButton"|trans|striptags }}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endblock %}
+				{% endif %}
+
+				{% block emz_top_bar_account %}
+					<div class="emz-top-bar-desktop {% if  searchBar %} emz-right {% endif %}">
+						<div class="emz-top-bar-item">
+							<div class="dropdown">
+								<div class="emz-top-bar-hover emz-btn collapsed" 
+									type="button"
+									id="accountWidget"
+									data-bs-toggle="dropdown">
+									<span>{% sw_icon 'avatar' %}
+										{{ "account.myAccount"|trans|striptags }}</span>
+								</div>
+								<div class="dropdown-menu dropdown-menu-right account-menu-dropdown">
+									{% sw_include '@Storefront/storefront/emz/top-bar/includes/account-menu.html.twig' %}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endblock %}
+
+				{% block emz_top_bar_language %}
+					<div class="emz-top-bar-desktop">
+						{% sw_include '@Storefront/storefront/emz/top-bar/includes/language-widget.html.twig' %}
+					</div>
+				{% endblock %}
+
+				{% block emz_top_bar_currency %}
+					<div class="emz-top-bar-desktop">
+						{% sw_include '@Storefront/storefront/emz/top-bar/includes/currency-widget.html.twig' %}
+					</div>
+				{% endblock %}
+			</nav>
+		</div>
+	</div>
+{% endblock %}

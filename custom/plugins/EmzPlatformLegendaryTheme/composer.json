@@ -1,0 +1,43 @@
+{
+    "name": "emz/legendary-theme",
+    "description": "Premium shopware 6 theme by 8mylez GmbH called Legendary.",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "version": "v3.0.0",
+    "authors": [
+        {
+            "name": "8mylez GmbH",
+            "homepage": "https://8mylez.com"
+        }
+    ],
+    "require": {
+        "shopware/core": ">=6.6.0"
+    },
+    "minimum-stability": "RC",
+    "autoload": {
+        "psr-4": {
+            "Emz\\LegendaryTheme\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Emz\\LegendaryTheme\\EmzPlatformLegendaryTheme",
+        "copyright": "(c) by 8mylez GmbH",
+        "label": {
+            "de-DE": "Legendary Theme",
+            "en-GB": "Legendary Theme"
+        },
+        "description": {
+        "de-DE": "Legendary Theme für Shopware 6",
+        "en-GB": "Legendary Theme for Shopware 6"
+        },
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "manufacturerLink": {
+        "de-DE": "https://store.shopware.com/8mylez.html",
+        "en-GB": "https://store.shopware.com/en/8mylez.html"
+        },
+        "supportLink": {
+            "de-DE": "https://8mylez.com/kontakt/",
+            "en-GB": "https://8mylez.com/kontakt/"
+        }
+    }
+}

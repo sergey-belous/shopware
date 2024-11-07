@@ -1,0 +1,31 @@
+{% sw_extends '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+
+{% block layout_header_top_bar %}
+
+	<div class="top-bar">
+		<div class="emz-top-bar-phone">
+			<a href="tel:{{ 'emz-legendary-theme.header.topbarTelPhone'|trans|replace({' ': ''})|e }}" title="Telephone" rel="noopener">
+				{% if theme_config('emz-header-icon-tel') %}
+					<div class="emz-top-bar-phone-icon">
+						<img src="{{ theme_config('emz-header-icon-tel') |sw_encode_url }}" alt="{{ 'emz-legendary-theme.header.topbarTelPhone'|trans }}"/>
+					</div>
+				{% else %}
+					<span class="emz-top-bar-phone-icon">
+						{% sw_include '@Storefront/icons/phone.svg' %}
+					</span>
+				{% endif %}
+				<span class="emz-top-bar-phone-text">{{ 'emz-legendary-theme.header.topbarTelText'|trans }}:
+					{{ 'emz-legendary-theme.header.topbarTelPhone'|trans }}</span>
+			</a>
+		</div>
+		<div class="emz-top-bar-right">
+			<div class="emz-top-bar-language">
+				{% sw_include '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+			</div>
+			<div class="emz-top-bar-currency">
+				{% sw_include '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

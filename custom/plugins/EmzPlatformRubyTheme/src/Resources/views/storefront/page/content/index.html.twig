@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/page/content/index.html.twig' %}
+
+{% block page_content %}
+	{# @deprecated tag:v6.4.0 class `cms-breadcrump` use `cms-breadcrumb` instead #}
+	{% if not controllerAction is same as('home') %}
+		<div class="emz-breadcrumb">
+			<div class="breadcrumb cms-breadcrumb cms-breadcrump container">
+				{% block cms_breadcrumb %}
+					{% sw_include '@Storefront/storefront/layout/breadcrumb.html.twig' with {
+					navigationTree: page.header.navigation.tree,
+					category: page.header.navigation.active
+					} only %}
+				{% endblock %}
+			</div>
+		</div>
+	{% endif %}
+	{% block cms_content %}
+		{{ parent() }}
+	{% endblock %}
+{% endblock %}

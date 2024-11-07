@@ -1,0 +1,79 @@
+//@include media-breakpoint-up(xl) {
+.emz-hover {
+    transition: color 0.3s ease-in-out;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        height: 1em;
+        width: 100%;
+        border-bottom: .0625rem solid;
+        margin-top: .625rem;
+        opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+    }
+
+    &:hover {
+        color: $sw-color-brand-primary !important ;
+
+        &:after {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        .icon {
+            > svg {
+                color: $sw-color-brand-primary;
+            }
+        }
+    }
+}
+
+.active:after {
+    transform: scaleX(1);
+}
+
+.emz-nav-bar-btn:hover {
+    color: $sw-color-brand-primary;
+}
+
+.emz-navigation.dropdown > .dropdown-menu {
+    top: 200%;
+    transition: 0.3s all ease-in-out;
+    margin-top: unset;
+}
+.emz-navigation.dropdown:hover > .dropdown-menu {
+    display: block;
+    top: 100%;
+}
+
+.emz-navigation.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.emz-navigation.dropright > .dropdown-menu {
+    top: -28%;
+    transition: 0.3s all ease-in-out;
+}
+
+.emz-navigation.dropright:hover > .dropdown-menu {
+    display: block;
+    top: -28%;
+    left: 98%;
+}
+
+.emz-navigation.dropright > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.emz-navigation.dropdown .dropdown-item:hover, .emz-navigation.dropdown .dropdown-item:focus {
+    background-color: unset;
+}

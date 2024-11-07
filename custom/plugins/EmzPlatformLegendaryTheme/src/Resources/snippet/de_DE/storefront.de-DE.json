@@ -1,0 +1,12 @@
+{
+    "emz-legendary-theme": {
+        "header": {
+            "topbarTelText": "Tel.",
+            "topbarTelPhone": "+0123 456 789",
+            "accountSubText": "Account",
+            "cartSubText": "Warenkorb",
+            "bannerTextHighlighted": "Ausverkauf",
+            "bannerTextNormal": "Bis zu 30% reduziert"
+        }
+    }
+}

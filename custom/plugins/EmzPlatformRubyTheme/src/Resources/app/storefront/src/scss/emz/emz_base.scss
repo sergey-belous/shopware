@@ -1,0 +1,16 @@
+@import './top-bar.scss';
+@import './fonts.scss';
+@import './header.scss';
+@import './productbox.scss';
+@import './footer.scss';
+@import './body.scss';
+
+.emz-left{
+    margin-right: auto;
+    margin-left: 0rem;
+}
+
+.emz-right{
+    margin-left: auto;
+    margin-right: 0rem;
+}

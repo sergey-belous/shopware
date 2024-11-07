@@ -1,0 +1,262 @@
+.header-main {
+    background: $emz-header-color-header-background;
+
+    .dropdown-menu {
+        box-shadow: .3125rem .625rem 1rem rgba(51, 51, 51, 0.1), -5px 10px 16px rgba(51, 51, 51, 0.1);
+        border: none;
+        border-radius: 0;
+    }
+
+    .top-bar {
+        border-bottom: .0625rem solid $emz-header-color-topbar-border-color;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .emz-top-bar-phone {
+            line-height: 2.25rem;
+            display: flex;
+            color: $emz-header-color-header-color;
+
+            a {
+                color: inherit;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    color: $emz-header-hover-icons-color;
+                    text-decoration: none;
+                }
+
+                svg {
+                    width: .9375rem;
+                    height: .9375rem;
+                    fill: currentColor;
+                    margin-right: .625rem;
+                }
+                div.emz-top-bar-phone-icon {
+                    width: .9375rem;
+                    margin-right: .625rem;
+                    img {
+                        width: .9375rem;
+                    }
+                }
+
+                .emz-top-bar-phone-text {
+                    max-height: 2.25rem;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .emz-top-bar-currency {
+            .currencies-menu {
+                .top-bar-nav-text {
+                    display: inline;
+                }
+            }
+        }
+
+        .emz-top-bar-right {
+            display: flex;
+            .emz-top-bar-service,
+            .emz-top-bar-currency {
+                margin-left: 1.25rem;
+            }
+            .emz-top-bar-currency,
+            .emz-top-bar-language {
+                display: flex;
+            }
+            .top-bar-nav-btn.btn {
+                font-weight: 200;
+                color: $emz-header-color-header-color;
+
+                &:hover {
+                    color: $emz-header-hover-icons-color;
+                }
+            }
+        }
+    }
+
+    .header-row {
+        padding: 1.25rem .625rem;
+
+        .menu-toggle-col {
+            padding: 0;
+        }
+
+        .header-logo-col {
+            flex-shrink: 1;
+            padding: 0 .625rem;
+            margin: 0;
+        }
+
+        .header-actions-col {
+            padding: 0;
+            margin-left: auto;
+        }
+
+        .account-menu-btn,
+        .header-cart-icon {
+            display: inline;
+
+            .emz--icon-wrapper {
+                width: 100%;
+            }
+
+            .emz--text-wrapper {
+                width: 100%;
+                font-size: .6875rem;
+                line-height: .6875rem;
+                display: none;
+                font-weight: 200;
+                color: $emz-header-color-header-color;
+            }
+        }
+
+        .header-actions-btn {
+            .icon {
+                color: $emz-header-color-icon-color;
+            }
+
+            &:hover {
+                .icon {
+                    color: $emz-header-hover-icons-color;
+                }
+            }
+        }
+    }
+
+    .header-row,
+    .header-mobile-search-row {
+        flex-wrap: nowrap;
+
+        svg {
+            transition: all 0.3s ease;
+        }
+
+        .header-search-col,
+        .header-search-col-mobile {
+            flex-shrink: 1;
+
+            .header-search {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .header-search-btn {
+                border-top-left-radius: 2.875rem;
+                border-bottom-left-radius: 2.875rem;
+                border: .0625rem solid #dadada;
+                border-right: none;
+                height: 2.8125rem;
+
+                .loader {
+                    width: 1.3125rem;
+                    height: 1.3125rem;
+                    position: relative;
+                    top: .0625rem;
+                }
+
+                .header-search-icon {
+                    .icon {
+                        width: 1.3125rem;
+                        height: 1.3125rem;
+                    }
+
+                    svg {
+                        color: #333;
+
+                        &:hover {
+                            color: $sw-color-brand-primary;
+                        }
+                    }
+                }
+            }
+
+            .header-search-input {
+                border-radius: 0;
+                border-top-right-radius: 2.875rem;
+                border-bottom-right-radius: 2.875rem;
+                border: .0625rem solid #dadada;
+                border-left: none;
+                height: 2.5rem;
+                padding-left: 0;
+                font-weight: 200;
+                color: $emz-header-color-header-color;
+            }
+
+            .emz--is-focused {
+                .header-search-btn,
+                .header-search-input {
+                    border-color: $sw-color-brand-primary;
+                }
+            }
+        }
+    }
+
+    .header-mobile-search-row {
+        .header-search {
+            padding-bottom: 1.25rem;
+        }
+    }
+}
+
+.header-cart-badge {
+    font-weight: 300;
+}
+
+@include media-breakpoint-up(sm) {
+    .header-cart-badge {
+        display: block;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .header-main {
+        .header-row {
+            .account-menu-btn,
+            .header-cart-icon {
+                .emz--text-wrapper {
+                    display: block;
+                }
+            }
+
+            .header-search-input {
+                min-height: 2.8125rem;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .header-main .top-bar .emz-top-bar-right {
+        .emz-top-bar-language,
+        .emz-top-bar-currency {
+            display: block;
+        }
+    }
+    .header-main {
+        .header-row,
+        .header-mobile-search-row {
+            .header-search-col,
+            .header-search-col-mobile {
+                .header-search {
+                    max-width: 35.625rem;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+.header-search-btn {
+    .btn {
+        :disabled {
+            display: block;
+            align-items: normal;
+        }
+    }
+}

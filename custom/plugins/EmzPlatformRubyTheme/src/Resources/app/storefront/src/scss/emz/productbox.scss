@@ -1,0 +1,27 @@
+.product-box {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    height: 100%;
+    border: unset;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+}
+
+.page-link {
+    border: unset;
+}
+
+.btn,
+.dropdown-menu,
+.filter-multi-select-dropdown,
+.filter-panel-item-toggle,
+.sorting,
+.form-control.header-search-input {
+    border-radius: unset;
+}

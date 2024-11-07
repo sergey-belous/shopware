@@ -1,0 +1,47 @@
+{% block layout_main_navigation_menu_items %}
+	{% for treeItem in navigationTree %}
+		{% set category = treeItem.category %}
+		{% set name = category.translated.name %}
+		{% set categoryId = category.id %}
+		{% block layout_main_navigation_menu_item %}
+            <div class="nav-link main-navigation-link{% if treeItem.children|length > 0 and theme_config('emz-nav-dropdown') %} dropdown{% endif %}{% if (categoryId is same as(activeCategory.id)) or (categoryId in activeCategory.path) %} active{% endif %}{% if level > 0 %} dropright{% endif %}" {% if not theme_config('emz-nav-dropdown')  %} data-flyout-menu-trigger="{{ categoryId }}" {% endif %}>
+				{% if category.type == 'folder' %}
+					<div class="main-navigation-link-text">
+						<span itemprop="name">
+							{{ name }}
+							{% if treeItem.children|length > 0 %}
+								{% if level > 0 %}
+									{% sw_icon 'arrow-medium-right' style {'pack': 'solid', 'size': 'xs' }%}
+								{% else %}
+									{% sw_icon 'arrow-medium-down' style {'pack': 'solid', 'size': 'xs' }%}
+								{% endif %}
+							{% endif %}
+						</span>
+					</div>
+				{% else %}
+					<a class="main-navigation-link-text" itemprop="url" title="{{ name }}" {% if category.externalLink %} rel="noopener" {% endif %} href="{{ category_url(category) }}">
+						<span itemprop="name">
+							{{ name }}
+							{% if treeItem.children|length > 0 %}
+								{% if level > 0 %}
+									{% sw_icon 'arrow-medium-right' style {'pack': 'solid', 'size': 'xs' }%}
+								{% else %}
+									{% sw_icon 'arrow-medium-down' style {'pack': 'solid', 'size': 'xs' }%}
+								{% endif %}
+							{% endif %}
+						</span>
+					</a>
+				{% endif %}
+				{% if treeItem.children|length > 0 and theme_config('emz-nav-dropdown') %}
+					<div class="dropdown-menu">
+						{% sw_include '@EmzPlatformLegendaryTheme/storefront/layout/navigation/emz-categories.html.twig' with {
+                            navigationTree: treeItem.children,
+                            level: level+1,
+                            activeCategory: activeCategory
+                        } only %}
+					</div>
+				{% endif %}
+			</div>
+		{% endblock %}
+	{% endfor %}
+{% endblock %}

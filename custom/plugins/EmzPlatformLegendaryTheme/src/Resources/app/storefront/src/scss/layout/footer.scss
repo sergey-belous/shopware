@@ -1,0 +1,30 @@
+.footer-main {
+    border-top: 1px solid $emz-footer-color-border-1;
+    background: $emz-footer-color-background;
+    .footer-columns {
+        border-bottom: 1px solid $emz-footer-color-border-2;
+    }
+    .footer-column-headline {
+        color: $emz-footer-color-headline;
+    }
+    .footer-column-content {
+        color: $emz-footer-color-text;
+        a {
+            color: $emz-footer-color-text;
+            &:hover {
+                color: $sw-color-brand-primary;
+            }
+        }
+        .footer-contact-hotline {
+            a:hover {
+                color: $sw-color-brand-primary;
+            }
+        }
+    }
+    .footer-vat {
+        p {
+            color: $emz-footer-copyright-color-text;
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,109 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+{% block base_navigation %}{% endblock %}
+
+{% block base_header_inner %}
+	{% sw_include '@Storefront/storefront/emz/header/header.html.twig' %}
+{% endblock %}
+
+{% block base_footer %}
+	<footer class="footer-main">
+		{% block base_footer_inner %}
+			{% sw_include '@Storefront/storefront/layout/footer/footer.html.twig' %}
+		{% endblock %}
+	</footer>
+{% endblock %}
+
+{% block base_body %}
+	{{ parent() }}
+
+	{% if controllerName != "Register" and controllerName != "Checkout" %}
+		{% block layout_footer_smartphone %}
+			<footer data-emzscrollup id="emz-sticky-sm-footer" class="emz-sticky-sm-footer">
+				<div class="container">
+					<nav class="emz-sticky-sm-footer-nav">
+						<button type="button" aria-label="searchButton" class="justify-content-center emz-btn-modal btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchmodal">
+							{% sw_icon 'search' %}
+						</button>
+						<button type="button" aria-label="accountButton" class="justify-content-center emz-btn-modal btn btn-primary" data-bs-toggle="modal" data-bs-target="#accountmodal">
+							{% sw_icon 'avatar' %}
+						</button>
+					</nav>
+				</div>
+			</footer>
+		{% endblock %}
+
+		{% block base_modals %}
+			<!-- Modal -->
+			<div class="modal fade" data-backdrop="true" id="accountmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog emz-modal" role="document">
+					<div class="modal-content">
+						<div class="emz-modal-header">
+							<button type="button" class="btn" data-bs-dismiss="modal">
+								<span>{% sw_icon 'x' %}</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="account-menu-login">
+								{% if context.customer %}
+									{% block layout_header_actions_account_widget_dropdown_header %}
+										<div class="dropdown-header account-menu-header">
+											{{ "account.myAccount"|trans|sw_sanitize }}
+										</div>
+									{% endblock %}
+									{% block layout_header_actions_account_widget_dropdown_links %}
+										<div class="account-menu-links">
+											{% sw_include '@Storefront/storefront/page/account/sidebar.html.twig' with {'headerWidget': true} %}
+										</div>
+									{% endblock %}
+								{% else %}
+									<a href="{{ path('frontend.account.login.page') }}" title="{{ "account.loginSubmit"|trans|striptags }}" class="btn btn-primary account-menu-login-button">
+										{{ "account.loginSubmit"|trans|sw_sanitize }}
+									</a>
+									<div class="account-menu-register">
+										{{ "account.orRegister"|trans|sw_sanitize }}
+										<a href="{{ path('frontend.account.login.page') }}" title="{{ "account.orRegisterLink"|trans|striptags }}">{{ "account.orRegisterLink"|trans|striptags }}</a>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal fade" data-backdrop="true" id="searchmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog emz-modal" role="document">
+					<div class="modal-content">
+						<div class="emz-modal-header">
+							<button type="button" class="btn" data-bs-dismiss="modal">
+								<span>{% sw_icon 'x' %}</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="emz-footer-search">
+								<form action="{{ path('frontend.search.page') }}" method="get" data-search-widget="true" data-url="{{ path('frontend.search.suggest') }}?search=" class="header-search-form">
+									{% block layout_footer_search_input_group %}
+										<div class="input-group">
+											{% block layout_header_search_input %}
+												<input autofocus type="search" name="search" class="form-control header-search-input" autocomplete="off" autocapitalize="off" placeholder="{{ "header.searchPlaceholder"|trans|striptags }}" aria-label="{{ "header.searchPlaceholder"|trans|striptags }}" maxlength="30" value="{{ page.searchTerm }}">
+											{% endblock %}
+
+											{% block layout_footer_search_button %}
+												<div class="input-group-append">
+													<button type="submit" class="btn header-search-btn" aria-label="{{ "header.searchButton"|trans|striptags }}">
+														<span class="header-search-icon">
+															{% sw_icon 'search' %}
+														</span>
+													</button>
+												</div>
+											{% endblock %}
+										</div>
+									{% endblock %}
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,90 @@
+.navigation-offcanvas {
+    background: $emz-header-color-header-background;
+
+    .btn-light {
+        background-color: lighten($emz-header-color-header-background, 3%);
+        border-color: lighten($emz-header-color-header-background, 3%);
+        color: $emz-header-color-header-color;
+
+        &:hover, &:not(:disabled):not(.disabled):active {
+            background-color: lighten($emz-header-color-header-background, 1%);
+            border-color: lighten($emz-header-color-header-background, 1%);
+            color: $sw-color-brand-primary;
+
+            .icon {
+                color: $sw-color-brand-primary;
+            }
+        }
+
+        .icon {
+            color: $emz-header-color-header-color;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .navigation-offcanvas-headline {
+        color: lighten($sw-color-brand-primary, 10%);
+    }
+
+    .navigation-offcanvas-link.is-back-link {
+        border-color: #606060;
+        color: lighten($sw-color-brand-primary, 10%);
+    }
+
+    .navigation-offcanvas-list-item {
+        background-color: $emz-header-color-header-background;
+        border-color: #606060;
+
+        .navigation-offcanvas-link {
+            color: $emz-header-color-header-color;
+
+            &.is-current-category {
+                color: $sw-color-brand-primary;
+            }
+
+            .icon {
+                color: #606060;
+                transition: all 0.3s ease;
+            }
+        }
+
+        &:hover {
+            .navigation-offcanvas-link {
+                color: $sw-color-brand-primary;
+
+                .icon {
+                    color: $sw-color-brand-primary;
+                }
+            }
+        }
+    }
+}
+
+.navigation-offcanvas-placeholder, .navigation-offcanvas-overlay {
+    background: $emz-header-color-header-background;
+}
+
+.emz-offcanvas-sm-wrapper, .emz-footer-sm-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: .625rem;
+    margin-bottom: .625rem;
+
+    .emz-offcanvas-sm-icon, .emz-footer-sm-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border: .0625rem solid rgba(255,255,255,0.45);
+        padding: .625rem;
+        border-radius: 1.875rem;
+        margin: 0 .625rem;
+
+        svg {
+            display: block;
+            height: 100%;
+            width: 100%;
+            fill: currentColor;
+            color: rgba(255,255,255,0.45);
+        }
+    }
+}

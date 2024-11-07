@@ -1,0 +1,460 @@
+{
+    "name": "EmzPlatformLegendaryTheme",
+    "author": "Shopware AG",
+    "previewMedia": "app/storefront/dist/assets/legendary-theme-01.jpg",
+    "views": [
+        "@Storefront",
+        "@Plugins",
+        "@EmzPlatformLegendaryTheme"
+    ],
+    "style": [
+        "@Storefront",
+        "app/storefront/src/scss/base.scss"
+    ],
+    "script": [
+        "@Storefront",
+        "app/storefront/dist/storefront/js/emz-platform-legendary-theme/emz-platform-legendary-theme.js"
+    ],
+    "asset": [
+        "app/storefront/src/assets"
+    ],
+    "config": {
+        "blocks": {
+            "typography": {
+                "label": {
+                    "en-GB": "Typography",
+                    "de-DE": "Typografie"
+                }
+            },
+            "emz-media": {
+                "label": {
+                    "en-GB": "Icons",
+                    "de-DE": "Icons"
+                }
+            },
+            "emz-nav-settings": {
+                "label": {
+                    "en-GB": "Navigation",
+                    "de-DE": "Navigation"
+                }
+            },
+            "emz-footer-settings": {
+                "label": {
+                    "en-GB": "Footer",
+                    "de-DE": "Footer"
+                }
+            },
+            "emz-header-color": {
+                "label": {
+                    "en-GB": "Header colours",
+                    "de-DE": "Header Farben"
+                }
+            },
+            "emz-footer-color": {
+                "label": {
+                    "en-GB": "Footer colours",
+                    "de-DE": "Footer Farben"
+                }
+            },
+            "emz-social-media": {
+                "label": {
+                    "en-GB": "Social Media",
+                    "de-DE": "Social Media"
+                }
+            }
+        },
+
+        "fields": {
+            "sw-font-family-base": {
+                "label": {
+                    "en-GB": "Fonttype text",
+                    "de-DE": "Schriftart Text"
+                },
+                "type": "fontFamily",
+                "value": "'Poppins', sans-serif",
+                "editable": true,
+                "block": "typography"
+            },
+            "sw-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
+                "type": "color",
+                "value": "#4a545b",
+                "editable": true,
+                "block": "typography"
+            },
+            "sw-font-family-headline": {
+                "label": {
+                    "en-GB": "Fonttype headline",
+                    "de-DE": "Schriftart Überschrift"
+                },
+                "type": "fontFamily",
+                "value": "'Poppins', sans-serif",
+                "editable": true,
+                "block": "typography"
+            },
+            "emz-header-icon-tel": {
+                "label": {
+                    "en-GB": "Telephone",
+                    "de-DE": "Telefon"
+                },
+                "helpText": {
+                    "en-GB": "Telephone icon in Top-Bar. To use the default Icon let this field empty",
+                    "de-DE": "Telefon Icon in der Top-Bar. Um das Standard Icon zu benutzen dieses Feld leer lassen"
+                },
+                "type": "media",
+                "value": "",
+                "editable": true,
+                "block": "emz-media"
+            },
+            "emz-header-icon-nav": {
+                "label": {
+                    "en-GB": "Navigation",
+                    "de-DE": "Navigation"
+                },
+                "helpText": {
+                    "en-GB": "Logo in the right part of the Navigation. To get the default Icon let this field empty",
+                    "de-DE": "Logo im rechten Part der Navigation. Um das Standard Icon zu benutzen dieses Feld leer lassen"
+                },
+                "type": "media",
+                "value": "",
+                "editable": true,
+                "block": "emz-media"
+            },
+            "emz-nav-dropdown": {
+                "label": {
+                    "en-GB": "Flyout/Dropdown",
+                    "de-DE": "Flyout/Dropdown"
+                },
+                "type": "switch",
+                "value": true,
+                "editable": true,
+                "block": "emz-nav-settings",
+                "helpText": {
+                    "en-GB": "Switch between Dropdown Navigation and Flyout Navigation",
+                    "de-DE": "Zwischen Dropdown Navigation und Flyout Navigation Wechseln"
+                }
+            },
+            "emz-footer-icons": {
+                "label": {
+                    "en-GB": "Footer-Icons",
+                    "de-DE": "Footer-Icons"
+                },
+                "type": "switch",
+                "value": true,
+                "editable": true,
+                "block": "emz-footer-settings",
+                "helpText": {
+                    "en-GB": "Deactivate Footer-Icons",
+                    "de-DE": "Deaktiviere Footer-Icons"
+                }
+            },
+            "emz-font-family-base-font-weight": {
+                "label": {
+                    "en-GB": "Fontweight text",
+                    "de-DE": "Schriftstärke Text"
+                },
+                "type": "text",
+                "value": "200",
+                "editable": true,
+                "block": "typography",
+                "helpText": {
+                    "en-GB": "For the Font of this Theme (Poppins), the following font-weights are available: 200, 300, 400, 500, 600, 700",
+                    "de-DE": "Für die Schriftart des Themes (Poppins) sind folgende Schriftstärken möglich: 200, 300, 400, 500, 600, 700"
+                }
+            },
+            "emz-header-color-header-background": {
+                "label": {
+                    "en-GB": "Header Background",
+                    "de-DE": "Header Hintergrund"
+                },
+                "type": "color",
+                "value": "#333333",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Background-color for the header",
+                    "de-DE": "Hintergrund-Farbe für den Header"
+                }
+            },
+            "emz-header-color-header-color": {
+                "label": {
+                    "en-GB": "Header font colour",
+                    "de-DE": "Header Schriftfarbe"
+                },
+                "type": "color",
+                "value": "#777777",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Font-color for the header",
+                    "de-DE": "Schriftfarbe für den Header"
+                }
+            },
+            "emz-header-color-topbar-border-color": {
+                "label": {
+                    "en-GB": "Topbar dividing line",
+                    "de-DE": "Topbar Trennlinie"
+                },
+                "type": "color",
+                "value": "#414141",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Colour for the topbar dividing line",
+                    "de-DE": "Farbe für die Topbar Trennlinie"
+                }
+            },
+            "emz-header-color-icon-color": {
+                "label": {
+                    "en-GB": "Header Icon colour",
+                    "de-DE": "Header Icon Farbe"
+                },
+                "type": "color",
+                "value": "#ffffff",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Colour for the icons next to the search",
+                    "de-DE": "Farbe für die Icons neben der Suche"
+                }
+            },
+            "emz-header-color-banner-highlighted-color": {
+                "label": {
+                    "en-GB": "Navigation 'Clearance' highlighted colour",
+                    "de-DE": "Navigation 'Ausverkauf' hervorgehobene Farbe"
+                },
+                "type": "color",
+                "value": "#999",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Color for the highlighted 'clearance'-text next to the main-navigation",
+                    "de-DE": "Farbe für den hervorgehobenen 'Ausverkauf'-Text neben der Haupt-Navigation"
+                }
+            },
+            "emz-header-color-main-navigation-background": {
+                "label": {
+                    "en-GB": "Navigation Background",
+                    "de-DE": "Navigation Hintergrund"
+                },
+                "type": "color",
+                "value": "#ffffff",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Background-color for the main-navigation",
+                    "de-DE": "Hintergrund-Farbe für den Haupt-Navigation"
+                }
+            },
+            "emz-header-color-main-navigation-color": {
+                "label": {
+                    "en-GB": "Navigation font-colour",
+                    "de-DE": "Header Schriftfarbe"
+                },
+                "type": "color",
+                "value": "#333333",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Font-colour for the entries of the main-navigation",
+                    "de-DE": "Schriftfarbe für die Menüpunkte der Haupt-Navigation"
+                }
+            },
+            "emz-header-color-main-navigation-dropdown-background": {
+                "label": {
+                    "en-GB": "Navigation Dropdown Background",
+                    "de-DE": "Navigation Dropdown Hintergrund"
+                },
+                "type": "color",
+                "value": "#ffffff",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Background-color for the dropdown in the main-navigation",
+                    "de-DE": "Hintergrund-Farbe für den Dropdown der Haupt-Navigation"
+                }
+            },
+            "emz-header-color-main-navigation-dropdown-color": {
+                "label": {
+                    "en-GB": "Navigation Dropdown font-colour",
+                    "de-DE": "Header Dropdown Schriftfarbe"
+                },
+                "type": "color",
+                "value": "#999999",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Font-colour for the entries in the dropdown of the main-navigation",
+                    "de-DE": "Schriftfarbe für die Menüpunkte in dem Dropdown der Haupt-Navigation"
+                }
+            },
+            "emz-header-color-main-navigation-border": {
+                "label": {
+                    "en-GB": "Navigation border-colour",
+                    "de-DE": "Navigation Rand-Farbe"
+                },
+                "type": "color",
+                "value": "#ebebeb",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Border-color for the main-navigation",
+                    "de-DE": "Rand-Farbe für die Haupt-Navigation"
+                }
+            },
+            "emz-footer-color-background": {
+                "label": {
+                    "en-GB": "Footer Background",
+                    "de-DE": "Footer Hintergrund"
+                },
+                "type": "color",
+                "value": "#ffffff",
+                "editable": true,
+                "block": "emz-footer-color",
+                "helpText": {
+                    "en-GB": "Background-color for the footer",
+                    "de-DE": "Hintergrund-Farbe für den Footer"
+                }
+            },
+            "emz-footer-color-headline": {
+                "label": {
+                    "en-GB": "Footer Headline",
+                    "de-DE": "Footer Überschrift"
+                },
+                "type": "color",
+                "value": "#008490",
+                "editable": true,
+                "block": "emz-footer-color",
+                "helpText": {
+                    "en-GB": "Color for the headlines in the footer",
+                    "de-DE": "Farbe für Überschriften im Footer"
+                }
+            },
+            "emz-footer-color-text": {
+                "label": {
+                    "en-GB": "Footer Text",
+                    "de-DE": "Footer Text"
+                },
+                "type": "color",
+                "value": "#4a545b",
+                "editable": true,
+                "block": "emz-footer-color",
+                "helpText": {
+                    "en-GB": "Color for the text in the footer",
+                    "de-DE": "Farbe für Texte im Footer"
+                }
+            },
+            "emz-footer-copyright-color-text": {
+                "label": {
+                    "en-GB": "Copyright Footer Text",
+                    "de-DE": "Copyright Footer Text"
+                },
+                "type": "color",
+                "value": "#4a545b",
+                "editable": true,
+                "block": "emz-footer-color",
+                "helpText": {
+                    "en-GB": "Color for the text in the copyright-footer",
+                    "de-DE": "Farbe für Texte im Copyright-Footer"
+                }
+            },
+            "emz-header-hover-icons-color": {
+                "label": {
+                    "en-GB": "Header hover color icons",
+                    "de-DE": "Header Hover Farbe Icons"
+                },
+                "type": "color",
+                "value": "#ffffff",
+                "editable": true,
+                "block": "emz-header-color",
+                "helpText": {
+                    "en-GB": "Color for icons on hover",
+                    "de-DE": "Farbe für icons bei hover"
+                }
+            },
+            "emz-footer-color-border-1": {
+                "label": {
+                    "en-GB": "First Border",
+                    "de-DE": "Erste Trennlinie"
+                },
+                "type": "color",
+                "value": "#bcc1c7",
+                "editable": true,
+                "block": "emz-footer-color",
+                "helpText": {
+                    "en-GB": "Color of the first Border in the Footer",
+                    "de-DE": "Farbe für die obere Trennlienie im Footer"
+                }
+            },
+            "emz-footer-color-border-2": {
+                "label": {
+                    "en-GB": "Second Border",
+                    "de-DE": "Erste Trennlinie"
+                },
+                "type": "color",
+                "value": "#bcc1c7",
+                "editable": true,
+                "block": "emz-footer-color",
+                "helpText": {
+                    "en-GB": "Color of the second Border in the Footer",
+                    "de-DE": "Farbe für die mittlere Trennlienie im Footer"
+                }
+            },
+            "emz-social-media-facebook-link": {
+                "label": {
+                    "en-GB": "Facebook-Link",
+                    "de-DE": "Facebook-Link"
+                },
+                "type": "text",
+                "editable": true,
+                "block": "emz-social-media",
+                "helpText": {
+                    "en-GB": "Link in Anführungszeichen hinterlegen. Beispiel: 'https://www.facebook.com/abcd'",
+                    "de-DE": "Link must be in quotes. Example: 'https://www.facebook.com/abcd'"
+                }
+            },
+            "emz-social-media-twitter-link": {
+                "label": {
+                    "en-GB": "Twitter-Link",
+                    "de-DE": "Twitter-Link"
+                },
+                "type": "text",
+                "editable": true,
+                "block": "emz-social-media",
+                "helpText": {
+                    "en-GB": "Link in Anführungszeichen hinterlegen. Beispiel: 'https://www.twitter.com/abcd'",
+                    "de-DE": "Link must be in quotes. Example: 'https://www.twitter.com/abcd'"
+                }
+            },
+            "emz-social-media-instagram-link": {
+                "label": {
+                    "en-GB": "Instagram-Link",
+                    "de-DE": "Instagram-Link"
+                },
+                "type": "text",
+                "editable": true,
+                "block": "emz-social-media",
+                "helpText": {
+                    "en-GB": "Link in Anführungszeichen hinterlegen. Beispiel: 'https://www.instagram.com/abcd'",
+                    "de-DE": "Link must be in quotes. Example: 'https://www.instagram.com/abcd'"
+                }
+            },
+            "emz-social-media-youtube-link": {
+                "label": {
+                    "en-GB": "Youtube-Link",
+                    "de-DE": "youtube-Link"
+                },
+                "type": "text",
+                "editable": true,
+                "block": "emz-social-media",
+                "helpText": {
+                    "en-GB": "Link in Anführungszeichen hinterlegen. Beispiel: 'https://www.youtube.com/abcd'",
+                    "de-DE": "Link must be in quotes. Example: 'https://www.youtube.com/abcd'"
+                }
+            }
+        }
+    }
+}

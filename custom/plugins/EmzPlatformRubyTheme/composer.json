@@ -1,0 +1,45 @@
+{
+  "name": "emz/rubytheme",
+
+  "description": "Premium shopware 6 theme by 8mylez GmbH called Ruby.",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "version": "v3.1.2",
+  "authors": [
+    {
+      "name": "8mylez GmbH",
+      "homepage": "https://8mylez.com"
+    }
+  ],
+  "require": {
+    "shopware/core": ">=6.6.0",
+    "shopware/storefront": ">=6.6.0"
+ },
+  "minimum-stability": "RC",
+  "autoload": {
+    "psr-4": {
+      "EmzPlatformRubyTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "EmzPlatformRubyTheme\\EmzPlatformRubyTheme",
+    "label": {
+      "de-DE": "Ruby Theme",
+      "en-GB": "Ruby Theme"
+    },
+    "description": {
+        "de-DE": "Ruby Theme für Shopware 6",
+        "en-GB": "Ruby Theme for Shopware 6"
+    },
+    "plugin-icon": "src/Resources/config/plugin.png",
+    "copyright": "(c) by 8mylez GmbH",
+    "manufacturerLink": {
+        "de-DE": "https://8mylez.com/8mylez/",
+        "en-GB": "https://8mylez.com/8mylez/"
+    },
+    "supportLink": {
+        "de-DE": "https://8mylez.com/kontakt/",
+        "en-GB": "https://8mylez.com/kontakt/"
+    }
+  }
+}

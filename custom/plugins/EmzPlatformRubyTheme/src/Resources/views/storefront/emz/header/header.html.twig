@@ -1,0 +1,52 @@
+{% block emz_page_top_bar %}
+	{% sw_include '@Storefront/storefront/emz/top-bar/top-bar.html.twig' %}
+{% endblock %}
+
+{% block layout_header_search %}
+	<div class="emz-header-search">
+		{% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
+	</div>
+{% endblock %}
+
+{% block emz_page_header %}
+	<div data-emzStickyHeader class="emz-sticky-header" id="emz-sticky">
+		<div class="container" id="emz-header-main">
+			<nav class="emz-sticky-header-container">
+				<div class="emz-sticky-header-container-logo emz-sticky-header-item " id="emz-header-logo">
+					{% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+				</div>
+				
+				<div class="emz-sticky-header-stack-mobile emz-sticky-header-item ">
+					{% sw_include '@Storefront/storefront/emz/header/actions/stack.html.twig' %}
+				</div>
+
+				<div class="emz-sticky-header-container-nav emz-sticky-header-item" id="emz-header-navbar">
+				{% if theme_config('emz-page-header-dropdown') %}
+					{% sw_include '@Storefront/storefront/emz/navigation/navigation.html.twig' %}
+					{% else %}
+					{% sw_include '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
+				{% endif %}	
+				</div>
+
+				<div class="emz-sticky-header-container-cart-wishlist">
+					{% if config('core.cart.wishlistEnabled') %}
+						{% block layout_header_actions_wishlist %}
+							<div class="header-wishlist" style="position:relative">
+								<a class="btn header-wishlist-btn header-actions-btn"
+									href="{{ path('frontend.wishlist.page') }}"
+									title="{{ 'header.wishlist'|trans|striptags }}"
+									aria-label="{{ 'header.wishlist'|trans|striptags }}">
+									{% sw_include '@Storefront/storefront/layout/header/actions/wishlist-widget.html.twig' %}
+								</a>
+							</div>
+						{% endblock %}
+					{% endif %}
+
+					<div class="emz-sticky-header-container-cart emz-sticky-header-item" id="emz-header-cart">
+						{% sw_include '@Storefront/storefront/emz/header/actions/cart.html.twig' %}
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+{% endblock %}

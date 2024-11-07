@@ -1,0 +1,8 @@
+{% block emz_page_header_stack %}
+	<button class="emz-btn" type="button" data-off-canvas-menu="true" aria-label="{{ "general.menuLink"|trans|striptags }}">
+		{% sw_icon 'stack' %}
+		<span class="emz-header-text">
+			{{ "emz.header.menu"|trans|sw_sanitize }}
+		</span>
+	</button>
+{% endblock %}

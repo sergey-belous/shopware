@@ -1,0 +1,32 @@
+{% block layout_main_navigation %}
+	{% block layout_main_navigation_navbar %}
+		<div class="emz-header-navbar">
+			<nav class="nav main-navigation-menu"
+				itemscope="itemscope"
+                itemtype="http://schema.org/SiteNavigationElement">
+				<div class="emz-navigation-categories">
+					{% block layout_main_navigation_menu_home %}
+						<div class="emz-navigation">
+							<a class="emz-nav-link emz-sticky-header-nav-item {% if controllerAction is same as('home') %} active{% endif %}" href="{{ path('frontend.home.page') }}" itemprop="url">
+								<div class="emz-sticky-header-nav-text">{{ "general.homeLink"|trans|sw_sanitize }}</div>
+							</a>
+						</div>
+					{% endblock %}
+					{% block layout_main_navigation_menu_items %}
+						{% set navigationTree = page.header.navigation.tree %}
+						{% block layout_main_navigation_menu_item_dropdown_import %}
+
+
+							{% sw_include '@Storefront/storefront/emz/navigation/categories.html.twig' with {
+							activeCategoryId: page.header.navigation.active.id,
+							navigationTree: navigationTree,
+							level: 0
+						} only %}
+
+						{% endblock %}
+					{% endblock %}
+				</div>
+			</nav>
+		</div>
+	{% endblock %}
+{% endblock %}

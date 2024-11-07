@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/layout/header/search.html.twig' %}
+
+{% block layout_header_search %}
+	{% set searchBar = theme_config('emz-page-header-search') %}
+
+    <div class="collapse {% if searchBar %} show {% endif %}"
+         id="searchCollapse">
+        <div class="header-search">
+            {% block layout_header_search_form %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+

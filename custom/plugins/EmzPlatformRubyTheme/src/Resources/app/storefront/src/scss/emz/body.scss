@@ -1,0 +1,25 @@
+.emz-breadcrumb {
+    background-color: $emz-page-body-breadcrumb-color;
+}
+
+.emz-product-breadcrumb {
+    .breadcrumb {
+        padding-left: 10px;
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 0rem;
+    height: 100%;
+    line-height: 2.8125rem;
+    padding: 0;
+    a {
+        color: $emz-page-body-breadcrumb-font-color;
+        &.is-active {
+            color: $emz-page-body-breadcrumb-active-color;
+        }
+        &:hover{
+            color: $emz-page-body-breadcrumb-active-color;
+        }
+    }
+}

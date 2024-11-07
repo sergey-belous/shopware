@@ -1,0 +1,146 @@
+@include media-breakpoint-up(xs) {
+    .emz-sticky-sm-footer {
+        display: flex;
+        width: 100%;
+        background-color: $sw-color-brand-primary;
+        height: 3.125rem;
+        position: fixed;
+        bottom: 0rem;
+        z-index: 600;
+        transition: bottom 0.3s;
+    }
+    .emz-footer-search {
+        margin: unset;
+    }
+
+    .footer-column-headline {
+        padding-bottom: 1rem;
+    }
+
+    .footer-link-item {
+        margin-bottom: .4375rem;
+    }
+
+    .footer-upper {
+        background-color: $emz-page-footer-color-2;
+    }
+
+    .footer-bottom {
+        background-color: $emz-page-footer-color-1;
+        
+        .footer-vat p {
+            margin-bottom: unset;
+        }
+        .footer-service-menu-list{
+            margin-bottom: unset;
+        }
+    }
+
+    .emz-sticky-footer-search:focus {
+        outline: unset;
+    }
+
+    .emz-btn-modal {
+        height: 3.125rem;
+        margin: auto;
+        width: 50%;
+    }
+
+    .emz-btn-modal.btn-primary:focus {
+        box-shadow: unset;
+    }
+
+    .btn:focus,
+    .btn.focus {
+        outline: unset;
+        box-shadow: unset;
+    }
+    .modal-body {
+        padding-top: unset;
+        .account-menu-login {
+            margin: unset;
+        }
+    }
+
+    .scroll-up-button {
+        bottom: 4rem;
+    }
+
+    .emz-modal-footer,
+    .emz-modal-header {
+        display: flex;
+        border-top: unset;
+        border-bottom-right-radius: unset;
+        border-bottom-left-radius: unset;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        justify-content: flex-end;
+        z-index: 1500;
+    }
+
+    .footer-headline {
+        text-transform: uppercase;
+        color: $emz-page-footer-fontcolor-1;
+    }
+
+    .footer-link {
+        text-transform: uppercase;
+        color: $emz-page-footer-fontcolor-2;
+        font-size: .8125rem;
+    }
+
+    .footer-contact-hotline {
+        color: $emz-page-footer-fontcolor-2;
+        a {
+            font-size: 1rem !important;
+        }
+    }
+
+    #footerColumns {
+        background-color: $emz-page-footer-color-2;
+    }
+
+    .footer-logos {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+    }
+
+    .footer-vat {
+        color: $emz-page-footer-fontcolor-3;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .emz-sticky-sm-footer {
+        display: flex;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .emz-sticky-sm-footer {
+        display: flex;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .emz-sticky-sm-footer {
+        display: none;
+    }
+
+    .scroll-up-button {
+        bottom: 1.5rem;
+    }
+
+    .footer-bottom {
+        margin-bottom: unset;
+        .footer-vat p {
+            margin-bottom: unset;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .emz-sticky-sm-footer {
+        display: none;
+    }
+}

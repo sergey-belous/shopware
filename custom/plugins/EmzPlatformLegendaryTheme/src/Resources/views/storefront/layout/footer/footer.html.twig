@@ -1,0 +1,57 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_navigation_hotline %}
+	<div class="col-md-3 footer-column js-footer-column">
+		{% block layout_footer_navigation_hotline_headline %}
+			{{ parent() }}
+		{% endblock %}
+		{% block layout_footer_navigation_hotline_content %}
+			{{ parent() }}
+		{% endblock %}
+	</div>
+{% endblock %}
+
+{% block layout_footer_navigation_column %}
+	<div class="col-md-3 footer-column js-footer-column">
+		{% block layout_footer_navigation_information_headline %}
+			{{ parent() }}
+		{% endblock %}
+		{% block layout_footer_navigation_information_content %}
+			{{ parent() }}
+		{% endblock %}
+	</div>
+{% endblock %}
+
+
+{% block layout_footer_payment_shipping_logos %}
+	{% if theme_config('emz-footer-icons') %}
+		<div class="emz-footer-sm-wrapper">
+			{% if theme_config('emz-social-media-facebook-link')%}
+				<a class="emz-offcanvas-sm-icon" href="{{ theme_config('emz-social-media-facebook-link')|trim('\'')|trim('"') }}" title="Facebook" rel="noopener" target="_blank">
+					{% sw_include '@EmzPlatformLegendaryTheme/icons/facebook.svg' %}
+				</a>
+			{% endif %}
+
+			{% if theme_config('emz-social-media-twitter-link')|trim('\'')|trim('"') %}
+				<a class="emz-footer-sm-icon" href="{{ theme_config('emz-social-media-twitter-link')|trim('\'')|trim('"') }}" title="Twitter" rel="noopener" target="_blank">
+					{% sw_include '@EmzPlatformLegendaryTheme/icons/twitter.svg' %}
+				</a>
+			{% endif %}
+
+			{% if theme_config('emz-social-media-instagram-link')|trim('\'')|trim('"') %}
+				<a class="emz-footer-sm-icon" href="{{ theme_config('emz-social-media-instagram-link')|trim('\'')|trim('"') }}" title="Instagram" rel="noopener" target="_blank">
+					{% sw_include '@EmzPlatformLegendaryTheme/icons/instagram.svg' %}
+				</a>
+			{% endif %}
+
+			{% if theme_config('emz-social-media-youtube-link')|trim('\'')|trim('"') %}
+				<a class="emz-footer-sm-icon" href="{{ theme_config('emz-social-media-youtube-link')|trim('\'')|trim('"') }}" title="Youtube" rel="noopener" target="_blank">
+					{% sw_include '@EmzPlatformLegendaryTheme/icons/youtube.svg' %}
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}
+
+{% block layout_footer_copyright %}{% endblock %}
+

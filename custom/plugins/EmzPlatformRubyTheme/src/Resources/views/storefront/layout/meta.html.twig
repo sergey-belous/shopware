@@ -1,0 +1,32 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_meta_tags %}
+	{{parent (layout_head_meta_tags)}}
+
+	{% block layout_head_meta_font %}
+		{% if theme_config('emz-page-font-on') %}
+			{% set font = theme_config('emz-page-font') %}
+			<style>
+				@import url("{{theme_config('emz-page-font')}}");
+			</style>
+		{% endif %}
+	{% endblock %}
+	{% block layout_head_meta_contentmain %}
+		{% if controllerName != "Auth" and controllerName != "Checkout" %}
+			<style>
+				.content-main .container-main {
+					padding-top: 0;
+				}
+			</style>
+		{% endif %}
+	{% endblock %}
+	{% block layout_head_meta_footer %}
+		{% if controllerName != "Register" %}
+			<style>
+				.footer-bottom {
+					margin-bottom: 50px;
+				}
+			</style>
+		{% endif %}
+	{% endblock %}
+{% endblock %}

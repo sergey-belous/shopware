@@ -1,0 +1,268 @@
+{
+  "name": "EmzPlatformRubyTheme",
+  "author": "8mylez GmbH",
+  "previewMedia": "app/storefront/dist/assets/ruby-theme-01.jpg",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@EmzPlatformRubyTheme",
+     "@EmzPlatformConversionHeader"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/emz-platform-ruby-theme/emz-platform-ruby-theme.js"
+  ],
+  "asset": [
+    "app/storefront/src/assets"
+  ],
+  "config": {
+    "blocks": {
+      "emz-settings-gf": {
+        "label": {
+          "en-GB": "Google Font settings",
+          "de-DE": "Google Font Einstellungen"
+        }
+      },
+      "emz-settings": {
+        "label": {
+          "en-GB": "General settings",
+          "de-DE": "Allgemeine Einstellungen"
+        }
+      },
+      "emz-settings-header-topbar-colors": {
+        "label": {
+          "en-GB": "Header & Topbar colors",
+          "de-DE": "Header & Topbar Farbeinstellungen"
+        }
+      },
+      "emz-settings-body-colors": {
+        "label": {
+          "en-GB": "Body colors",
+          "de-DE": "Body Farbeinstellungen"
+        }
+      },
+      "emz-settings-footer-colors": {
+        "label": {
+          "en-GB": "Footer colors",
+          "de-DE": "Footer Farbeinstellungen"
+        }
+      },
+      "emz-settings-footer-fontcolors": {
+        "label": {
+          "en-GB": "Footer fontcolors",
+          "de-DE": "Footer Schirftfarben"
+        }
+      }
+    },
+
+    "fields": {
+      "emz-page-font-on": {
+        "label": {
+          "de-DE": "Google Font einbinden",
+          "en-GB": "Add google font"
+        },
+        "type": "switch",
+        "value": false,
+        "editable": true,
+        "block": "emz-settings-gf",
+        "helpText": {
+          "en-GB": "Activate or deactivate google fonts. When you use Google fonts, you have to update your privacy policy.",
+          "de-DE": "Aktivieren oder deaktivieren Sie die Google Fonts. Des Weiteren beachten Sie bitte, dass Sie Ihre Datenschutzerklärung durch das Nutzen der Google Font aktualisieren müssen."
+        }
+      },
+
+      "emz-page-font": {
+        "label": {
+          "de-DE": "Google Font link",
+          "en-GB": "Google font link"
+        },
+        "type": "text",
+        "scss": false,
+        "value": "",
+        "editable": true,
+        "block": "emz-settings-gf",
+        "helpText": {
+          "en-GB": "Include your google font import link.",
+          "de-DE": "Fügen Sie hier ihren Google Font Import-link ein."
+        }
+      },
+
+      "emz-page-header-dropdown": {
+        "label": {
+          "de-DE": "Dropdown Navigation deaktivieren/aktivieren",
+          "en-GB": "Deactivate/activate dropdown navigation"
+        },
+        "type": "switch",
+        "value": true,
+        "editable": true,
+        "block": "emz-settings"
+      },
+
+      "emz-page-header-search": {
+        "label": {
+          "de-DE": "Suchleiste aufklappen",
+          "en-GB": "Open search bar"
+        },
+        "type": "switch",
+        "value": false,
+        "editable": true,
+        "block": "emz-settings"
+      },
+
+      "emz-page-footer-icons": {
+        "label": {
+          "en-GB": "Footer Icons",
+          "de-DE": "Footer Icons"
+        },
+        "type": "switch",
+        "value": false,
+        "editable": true,
+        "block": "emz-settings",
+        "helpText": {
+          "en-GB": "Activate or deactivate the payment and shipping methode icons in the Footer.",
+          "de-DE": "Aktivieren oder deaktivieren Sie die Icons für Zahlungsmethoden und Liefermethoden im Footer."
+        }
+      },
+      "emz-page-font-weight": {
+        "label": {
+          "de-DE": "Font Weight",
+          "en-GB": "Font Weight"
+        },
+        "type": "number",
+        "value": "300",
+        "editable": true,
+        "block": "emz-settings",
+        "helpText": {
+          "en-GB": "Decide between 100, 200, 300 and 400 (default).",
+          "de-DE": "Entscheiden Sie zwischen 100, 200, 300 und 400 (Standard)."
+        }
+      },
+
+      "emz-page-top-bar-color": {
+        "label": {
+          "en-GB": "Topbar Color",
+          "de-DE": "Topbar Farbeinstellungen"
+        },
+        "type": "color",
+        "value": "#fff",
+        "editable": true,
+        "block": "emz-settings-header-topbar-colors"
+      },
+
+      "emz-page-top-bar-fontcolor": {
+        "label": {
+          "en-GB": "Topbar Font Color",
+          "de-DE": "Topbar Schriftfarbe"
+        },
+        "type": "color",
+        "value": "#4a545b",
+        "editable": true,
+        "block": "emz-settings-header-topbar-colors"
+      },
+
+      "emz-page-header-color": {
+        "label": {
+          "en-GB": "Header Color",
+          "de-DE": "Header Farbeinstellungen"
+        },
+        "type": "color",
+        "value": "#fff",
+        "editable": true,
+        "block": "emz-settings-header-topbar-colors"
+      },
+
+      "emz-page-body-breadcrumb-color": {
+        "label": {
+          "de-DE": "Breadcrumb Hintergrund Farbe",
+          "en-GB": "Breadcrumb Background Color"
+        },
+        "type": "color",
+        "value": "#ffffff",
+        "editable": true,
+        "block": "emz-settings-body-colors"
+      },
+
+      "emz-page-body-breadcrumb-active-color": {
+        "label": {
+          "de-DE": "Aktive Kategorie Schriftfarbe",
+          "en-GB": "Breadcrumb active Fontcolor"
+        },
+        "type": "color",
+        "value": "#3d3d3d",
+        "editable": true,
+        "block": "emz-settings-body-colors"
+      },
+
+      "emz-page-body-breadcrumb-font-color": {
+        "label": {
+          "de-DE": "Kategorie Schriftfarbe",
+          "en-GB": "Breadcrumb Fontcolor"
+        },
+        "type": "color",
+        "value": "#3d3d3d",
+        "editable": true,
+        "block": "emz-settings-body-colors"
+      },
+
+      "emz-page-footer-color-1": {
+        "label": {
+          "de-DE": "Copyright Footer",
+          "en-GB": "Copyright Footer"
+        },
+        "type": "color",
+        "value": "#3d3d3d",
+        "editable": true,
+        "block": "emz-settings-footer-colors"
+      },
+      
+      "emz-page-footer-color-2": {
+        "label": {
+          "de-DE": "Content Footer",
+          "en-GB": "Content Footer"
+        },
+        "type": "color",
+        "value": "#f0f0f0",
+        "editable": true,
+        "block": "emz-settings-footer-colors"
+      },
+
+      "emz-page-footer-fontcolor-1": {
+        "label": {
+          "de-DE": "Content Title Fontcolor",
+          "en-GB": "Content Title Fontcolor"
+        },
+        "type": "color",
+        "value": "#008490",
+        "editable": true,
+        "block": "emz-settings-footer-colors"
+      },
+
+      "emz-page-footer-fontcolor-2": {
+        "label": {
+          "de-DE": "Content Fontcolor",
+          "en-GB": "Content Fontcolor"
+        },
+        "type": "color",
+        "value": "#4a545b",
+        "editable": true,
+        "block": "emz-settings-footer-colors"
+      },
+
+      "emz-page-footer-fontcolor-3": {
+        "label": {
+          "de-DE": "Copyright Footer Schriftfarbe",
+          "en-GB": "Copyright Footer Fontcolor"
+        },
+        "type": "color",
+        "value": "#ffffff",
+        "editable": true,
+        "block": "emz-settings-footer-colors"
+      }
+    }
+  }
+}

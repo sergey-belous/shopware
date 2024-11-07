@@ -1,0 +1,50 @@
+{% block emz_navigation_dropdown %}
+	{% for treeItem in navigationTree %}
+		{% set category = treeItem.category %}
+		{% set name = category.translated.name %}
+		{% set categorId = category.id %}
+		{% set children = treeItem.children %}
+
+		<div class="emz-navigation
+							{% if level == 0%}
+							 	{% if treeItem.children|length > 0 %}dropdown{% endif %}
+							{% else %}
+								dropdown-item {% if treeItem.children|length > 0 %}dropright{% endif %}
+							{% endif %}">
+
+			{% if category.type == 'folder' %}
+
+				<a class="{% if level == 0 %}emz-nav-link emz-sticky-header-nav-item{% else %}emz-sticky-header-drodown-item{% endif %}{% if categorId is same as(activeCategoryId) %} active{% endif %}" itemprop="url" {% if category.externalLink %}target="_blank" rel="noopener"{% endif %} href="{{ category_url(category) }}">
+					<div class="{% if level == 0 %}emz-sticky-header-nav-text{% endif %}" itemprop="name">
+						{{name}}
+					</div>
+				</a>
+
+			{% else %}
+
+				<a class="{% if level == 0 %}emz-nav-link emz-sticky-header-nav-item{% else %}emz-sticky-header-drodown-item{% endif %}{% if categorId is same as(activeCategoryId) %} active{% endif %}" itemprop="url" {% if category.externalLink %}target="_blank" rel="noopener"{% endif %} href="{{ category_url(category) }}">
+					<div class="{% if level == 0 %}emz-sticky-header-nav-text{% endif %}" itemprop="name">
+						{{name}}
+						{% if treeItem.children|length > 0 and level > 0 %}
+							{% sw_icon 'arrow-medium-right' style {'pack': 'solid', 'size': 'xs' }%}
+						{% endif %}
+					</div>
+				</a>
+
+			{% endif %}
+
+
+			{% if treeItem.children|length > 0 %}
+
+				<div class="dropdown-menu">
+					{% sw_include '@Storefront/storefront/emz/navigation/categories.html.twig' with {
+						navigationTree: treeItem.children,
+						level: level + 1
+					}%}
+				</div>
+
+			{% endif %}
+
+		</div>
+	{% endfor %}
+{% endblock %}
